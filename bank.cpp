@@ -29,13 +29,13 @@ class Customer{
 class Account
 {
 private:
-    char accountType[100];
     Customer *cusD;
 public:
     int accountNo;
+    char accountType[100];
     Account();
     Account(int aNo, char *aTy);
-    void  getAccountDetailsint(int accNo, char *accTy, Customer *cusData)
+    void  getAccountDetails(int accNo, char *accTy, Customer *cusData)
     {
         accountNo = accNo;
         strcpy(accountType,accTy);
@@ -50,11 +50,11 @@ public:
 class currentAccount : public Account
 {
 private:
-    float currentBalance;
+    double currentBalance;
 public:
     void cDisplay()
     {
-        cout<<"Current Account Balance :"<< currentBalance << endl;
+        cout<<"Current Account Balance :"<<currentBalance << endl;
     }
     void cDeposit()
     {
@@ -72,7 +72,7 @@ public:
         if(currentBalance > 500)
         {
             currentBalance = currentBalance-withdraw;
-            cout<<"Your account new balance: "<< currentBalance << endl;
+            cDisplay();
         }
         else
         {
@@ -91,7 +91,7 @@ private:
 public:
     void sDisplay()
     {
-        cout<<"Saving Account Balance :  "<<savingBalance << endl;
+        cout<<"Saving Account Balance :  "<< savingBalance << endl;
     }
     void sDeposit()
     {
@@ -111,7 +111,7 @@ public:
         if(savingBalance > 500)
         {
             savingBalance=savingBalance-withdraw;
-            cout<<"Your account new balance: "<<savingBalance << endl;
+            sDisplay();
         }
         else
         {
