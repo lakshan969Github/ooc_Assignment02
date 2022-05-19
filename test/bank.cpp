@@ -16,7 +16,7 @@ class Customer{
             strcpy(address, cAddress);
             phoneNumber = cPhone;
             accountData = aData;
-        };
+        }
         void DisplayDetails(){
             cout << customerName << endl;
             cout << address << endl;
@@ -34,11 +34,11 @@ public:
     int accountNo;
     char accountType[100];
     Account();
-    Account(int aNo, char *aTy);
-    void  getAccountDetails(int accNo, char *accTy, Customer *cusData)
+    Account(int aNo, char *aType);
+    void  getAccountDetails(int accNo, char *accType, Customer *cusData)
     {
         accountNo = accNo;
-        strcpy(accountType,accTy);
+        strcpy(accountType,accType);
         cusD = cusData;
     }
     void displayDetails()
@@ -91,7 +91,7 @@ private:
 public:
     void sDisplay()
     {
-        cout<<"Saving Account Balance :  "<< savingBalance << endl;
+        cout<<"Saving Account Balance :  " << setpercision(2) << savingBalance << endl;
     }
     void sDeposit()
     {
@@ -119,6 +119,7 @@ public:
         }
     }
 };
+
 
 
 
